@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des mangas{% endblock %}
+{% block pageTitle %}Liste des mangas{% endblock %}
+
+{% block body %}
+<a href="{{ url('app_manga_create') }}"
+    class="border border-gray-700 rounded-md px-4 py-1">
+    Créer
+</a>
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Mangaka</th>
+            <th>Description</th>
+            <th>Nombre de Tomes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for manga in mangas %}
+        <tr>
+            <td>{{ manga.name }}</td>
+            <td>{{ manga.mangaka.name }}</td>
+            <td>{{ manga.description }}</td>
+            <td>{{ manga.nbTomes }}</td>
+            <td>
+                <a href="{{ url('app_manga_edit', {'manga': manga.id}) }}">Modifier</a>
+                <a href="{{ url('app_manga_delete', {'manga': manga.id}) }}">Supprimer<N/a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
