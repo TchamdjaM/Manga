@@ -1,3 +1,3 @@
 # Manga
 
-site pour afficher un magaka et ses oeuvres avec symfony
+page web pour afficher un magaka et ses oeuvres, avec le nombre de tomes avec symfony
